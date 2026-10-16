@@ -97,6 +97,16 @@
       </div>
       <div class="section-3-conatiner-2 flex">
 <!-- missing array of data in a whiteCard Componet✅  -->
+
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          @for (e of events(); track e.id) {
+            <app-event-card
+              [event]="e"
+              (register)="handleEventRegistration(e.id)"
+              (details)="handleEventDetails(e.id)"
+            />
+          }
+        </div>
       </div>
     </div>
   </div>

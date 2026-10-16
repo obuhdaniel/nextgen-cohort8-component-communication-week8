@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Login } from './login/login';
-import { YRA_PILLARS } from './data/yra.data';
+import { EVENTS, YRA_PILLARS } from './data/yra.data';
 
 export const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: Home, data: {
-    pillars: YRA_PILLARS
+    pillars: YRA_PILLARS, events: EVENTS
   } },
   { path: 'login', component: Login },
 

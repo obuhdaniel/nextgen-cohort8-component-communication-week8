@@ -1,1 +1,28 @@
-<p>event-card works!</p>
+<article class="event-card" [class.compact]="variant() === 'compact'">
+  <div class="event-img" [style.background]="imageBackground()">
+    {{ event().imageLabel }}
+  </div>
+
+  <div class="event-body">
+    <span [class]="badgeClass()">{{ event().category }}</span>
+    <h3>{{ event().title }}</h3>
+
+    <div class="meta">
+      <span>{{ event().date }}</span>
+      <span>{{ event().mode }}</span>
+      <span>{{ event().duration }}</span>
+    </div>
+
+    @if (variant() === 'default') {
+      <p class="summary">{{ event().summary }}</p>
+    }
+
+
+    <div class="actions">
+     
+      <button type="button" class="details-link" (click)="onDetails()">
+        View details →
+      </button>
+    </div>
+  </div>
+</article>

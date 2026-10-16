@@ -2,12 +2,13 @@ import { Component, inject, input, output } from '@angular/core';
 import { Logo } from '../reusable/logo/logo';
 import { Button } from '../reusable/button/button';
 import { PillarCard } from '../reusable/pillar-card/pillar-card';
-import { Pillar } from '../data/yra.data';
+import { Pillar, YraEvent } from '../data/yra.data';
 import { Router } from '@angular/router';
+import { EventCard } from '../reusable/event-card/event-card';
 
 @Component({
   selector: 'app-home',
-  imports: [Logo, Button, PillarCard],
+  imports: [Logo, Button, PillarCard, EventCard],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -19,8 +20,19 @@ export class Home {
   pillars = input.required<Pillar[]>();
   pillarSelected = output<string>();
 
+  events = input.required<YraEvent[]>();
+  eventSelected = output<string>();
+
 
   handleNavigation(route: string) {
     this.router.navigateByUrl(route); // This executes the actual navigation
+  }
+
+  handleEventRegistration(id: string){
+    
+  }
+
+  handleEventDetails(id:string){
+
   }
 }

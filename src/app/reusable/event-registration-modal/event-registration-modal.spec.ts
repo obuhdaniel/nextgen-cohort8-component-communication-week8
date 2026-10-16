@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EventRegistrationModal } from './event-registration-modal';
-import { YraEvent } from '../../data/yra.data';
+import { WhiteCardItem } from '../../data/yra.data';
 
 describe('EventRegistrationModal', () => {
   let component: EventRegistrationModal;
@@ -22,15 +22,18 @@ describe('EventRegistrationModal', () => {
     expect(component).toBeTruthy();
   });
 
-  const event: YraEvent = {
+  const event: WhiteCardItem = {
     id: 'bootcamp',
     title: 'Research Bootcamp',
+    description: 'Research training.',
+    actionLabel: 'Register Now →',
+    actionValue: 'bootcamp',
+    tone: 'teal',
     imageLabel: 'BOOTCAMP',
     category: 'Training',
     date: '20 Aug',
     mode: 'Online',
     duration: '4 Weeks',
-    summary: 'Research training.',
     fee: 15000,
   };
 

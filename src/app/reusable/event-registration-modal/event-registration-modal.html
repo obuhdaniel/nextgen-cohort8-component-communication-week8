@@ -27,7 +27,7 @@
         <div class="pr-10">
           <span
             class="inline-flex rounded-full px-3 py-1 text-xs font-bold"
-            [class]="getCategoryClass(event.category)"
+            [class]="getCategoryClass(event.category ?? '')"
           >
             {{ event.category }}
           </span>
@@ -40,7 +40,7 @@
           </h2>
 
           <p id="registration-description" class="mt-2 text-sm leading-6 text-slate-500">
-            {{ event.summary }}
+            {{ event.description }}
           </p>
         </div>
 
@@ -68,7 +68,7 @@
             <span class="text-sm font-medium text-slate-500"> Registration fee </span>
 
             <span class="text-xl font-extrabold text-brand-orange">
-              {{ formatFee(event.fee) }}
+              {{ formatFee(event.fee ?? 0) }}
             </span>
           </div>
         

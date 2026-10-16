@@ -14,6 +14,8 @@ describe('Button', () => {
 
     fixture = TestBed.createComponent(Button);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('buttonType', 'primary');
+    fixture.componentRef.setInput('buttonText', 'Continue');
     await fixture.whenStable();
   });
 

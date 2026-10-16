@@ -1,5 +1,5 @@
 import { Component, HostListener, output, signal } from '@angular/core';
-import { YraEvent } from '../../data/yra.data';
+import { WhiteCardItem } from '../../data/yra.data';
 import { email, form, FormField, minLength, required } from '@angular/forms/signals';
 
 
@@ -22,9 +22,9 @@ interface Registration {
 export class EventRegistrationModal {
   // Modal state
   readonly isModalOpen = signal(false);
-  readonly selectedEvent = signal<YraEvent | null>(null);
+  readonly selectedEvent = signal<WhiteCardItem | null>(null);
 
-  readonly registrationSubmitted = output<Registration & { event: YraEvent }>();
+  readonly registrationSubmitted = output<Registration & { event: WhiteCardItem }>();
 
   // Form feedback state
   readonly submitted = signal(false);
@@ -60,7 +60,7 @@ export class EventRegistrationModal {
     },
   );
 
-  openModal(event: YraEvent): void {
+  openModal(event: WhiteCardItem): void {
     this.selectedEvent.set(event);
     this.resetForm();
     this.isModalOpen.set(true);

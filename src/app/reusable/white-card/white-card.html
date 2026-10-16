@@ -1,0 +1,50 @@
+<article
+  class="white-card"
+  [class.white-card--with-image]="item().imageLabel"
+  [class.compact]="variant() === 'compact'"
+>
+  @if (item().imageLabel) {
+    <div class="card-image" [style.background]="imageBackground()">
+      {{ item().imageLabel }}
+    </div>
+  }
+
+  <div class="card-body">
+    @if (item().icon) {
+      <div [class]="iconClass()" aria-hidden="true">{{ item().icon }}</div>
+    }
+
+    @if (item().category) {
+      <span [class]="badgeClass()">{{ item().category }}</span>
+    }
+
+    <h3 [class.event-title-text]="item().imageLabel">{{ item().title }}</h3>
+
+    @if (metadata().length) {
+      <div class="meta">
+        @for (value of metadata(); track value) {
+          <span>{{ value }}</span>
+        }
+      </div>
+    }
+
+    @if (variant() === 'default') {
+      <p>{{ item().description }}</p>
+    }
+
+    <div class="card-action">
+      @if (item().actionStyle && item().actionStyle !== 'link') {
+        <app-button
+          [buttonType]="item().actionStyle!"
+          [buttonText]="item().actionLabel"
+          arrowRight="true"
+          (Navclick)="onAction()"
+        />
+      } @else {
+        <button type="button" class="card-link" (click)="onAction()">
+          {{ item().actionLabel }}
+        </button>
+      }
+    </div>
+  </div>
+</article>

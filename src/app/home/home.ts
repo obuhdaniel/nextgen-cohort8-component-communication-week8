@@ -1,17 +1,15 @@
 import { Component, inject, input, output, viewChild } from '@angular/core';
 import { Logo } from '../reusable/logo/logo';
 import { Button } from '../reusable/button/button';
-import { PillarCard } from '../reusable/pillar-card/pillar-card';
-import { Pillar, ResourceItem, YraEvent } from '../data/yra.data';
+import { WhiteCardItem } from '../data/yra.data';
 import { Router } from '@angular/router';
-import { EventCard } from '../reusable/event-card/event-card';
 import { EventRegistrationModal } from '../reusable/event-registration-modal/event-registration-modal';
-import { ResourceCard } from '../reusable/resource-card/resource-card';
 import { VideoPlayer } from '../reusable/video-player/video-player';
+import { WhiteCard } from '../reusable/white-card/white-card';
 
 @Component({
   selector: 'app-home',
-  imports: [Logo, Button, PillarCard, EventCard, EventRegistrationModal, ResourceCard, VideoPlayer],
+  imports: [Logo, Button, WhiteCard, EventRegistrationModal, VideoPlayer],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -20,14 +18,14 @@ export class Home {
   
   videoId = 't8QNiGy4eOI';
 
-  pillars = input.required<Pillar[]>();
+  pillars = input.required<WhiteCardItem[]>();
   pillarSelected = output<string>();
 
-  events = input.required<YraEvent[]>();
+  events = input.required<WhiteCardItem[]>();
   eventSelected = output<string>();
   registrationModal = viewChild.required(EventRegistrationModal);
 
-  resources = input.required<ResourceItem[]>();
+  resources = input.required<WhiteCardItem[]>();
   resourceSelected = output<string>();
 
 

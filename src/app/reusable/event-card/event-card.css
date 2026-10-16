@@ -66,6 +66,11 @@
 
 h3 {
   margin: 10px 0 7px;
+  
+}
+.event-title-text{
+      font-size: 15px;
+  font-weight: 850;
 }
 
 .meta {

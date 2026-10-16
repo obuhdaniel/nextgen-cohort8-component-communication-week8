@@ -5,7 +5,7 @@
 
   <div class="event-body">
     <span [class]="badgeClass()">{{ event().category }}</span>
-    <h3>{{ event().title }}</h3>
+    <span class="event-title-text">{{ event().title }}</span>
 
     <div class="meta">
       <span>{{ event().date }}</span>
@@ -19,9 +19,13 @@
 
 
     <div class="actions">
-     
-      <button type="button" class="details-link" (click)="onDetails()">
-        View details →
+      
+      <button type="button" class="details-link" (click)="onRegister()">
+         @if(event().id === 'bootcamp'){
+                Register Now →
+        } @else {
+            View Details →
+        } 
       </button>
     </div>
   </div>

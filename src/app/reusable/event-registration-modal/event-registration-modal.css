@@ -3,6 +3,18 @@
   display: block;
 }
 
+.modalform{
+    font-weight: 800;
+}
+#registration-title{
+    font-weight: 900;
+
+}
+
+#registration-description{
+    font-size: 17px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .modal-panel {
     animation: modal-enter 200ms ease-out;

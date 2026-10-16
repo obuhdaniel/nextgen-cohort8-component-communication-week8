@@ -1,6 +1,6 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, HostListener, output, signal } from '@angular/core';
 import { YraEvent } from '../../data/yra.data';
-import { email, form, minLength, required } from '@angular/forms/signals';
+import { email, form, FormField, minLength, required } from '@angular/forms/signals';
 
 
 interface Registration {
@@ -12,7 +12,7 @@ interface Registration {
 
 @Component({
   selector: 'app-event-registration-modal',
-  imports: [],
+  imports: [FormField],
   templateUrl: './event-registration-modal.html',
   styleUrl: './event-registration-modal.css',
 })
@@ -20,13 +20,11 @@ interface Registration {
 
 
 export class EventRegistrationModal {
-
-
-     // Modal state
-
-  events = input.required<YraEvent[]>();
+  // Modal state
   readonly isModalOpen = signal(false);
-  readonly selectedEvent = signal<YraEvent>(this.events()[0]);
+  readonly selectedEvent = signal<YraEvent | null>(null);
+
+  readonly registrationSubmitted = output<Registration & { event: YraEvent }>();
 
   // Form feedback state
   readonly submitted = signal(false);
@@ -70,6 +68,14 @@ export class EventRegistrationModal {
 
   closeModal(): void {
     this.isModalOpen.set(false);
+    this.selectedEvent.set(null);
+  }
+
+  @HostListener('document:keydown.escape')
+  closeOnEscape(): void {
+    if (this.isModalOpen()) {
+      this.closeModal();
+    }
   }
 
   onBackdropClick(event: MouseEvent): void {
@@ -101,10 +107,10 @@ export class EventRegistrationModal {
     }
 
     // For learning purposes, show the submitted data in the console.
-    console.log('Registration details:', {
-      event: this.selectedEvent(),
-      ...this.registrationModel(),
-    });
+    const event = this.selectedEvent();
+    if (!event) return;
+
+    this.registrationSubmitted.emit({ event, ...this.registrationModel() });
 
     this.registrationComplete.set(true);
   }

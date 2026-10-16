@@ -32,7 +32,7 @@ export class EventCard {
   badgeClass = computed(()=> this.event().category === 'Seminar' ? 'badge badge-orange': 'badge badge-teal');
 
   imageBackground = computed(() => {
-    this.event().gradient ?? 'linear-gradient(135deg, var(--color-brand-teal), #72c5da)'
+    return this.event().gradient ?? 'linear-gradient(135deg, var(--color-brand-teal), #72c5da)';
   });
 
 

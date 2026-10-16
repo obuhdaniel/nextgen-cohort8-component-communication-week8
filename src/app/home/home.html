@@ -18,6 +18,10 @@
         </p>
         <div class="section-1-container-footer flex flex-col">
          <!-- mssing two buttons -->
+
+         <div>
+          <app-button></app-button>
+         </div>
           <div class="section-1-container-footer-items-wrapper flex flex-row mt-9">
             @for (
               item of [
@@ -33,9 +37,10 @@
         </div>
       </div>
       <div class="section-1-logo-wrapper relative flex flex-col h-full">
-    <!-- missing app logo -->
+    <!-- missing app logo ✅ -->
 
-    <p>hello</p>
+    <app-logo logoUrl='/myLogo.jpg'></app-logo>
+
         <div class="section-1-logo-wrapper-overflow absolute">
           <b>Join our research community</b>
           <br />

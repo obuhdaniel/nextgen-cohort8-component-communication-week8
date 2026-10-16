@@ -14,4 +14,7 @@ export const routes: Routes = [
   { path: 'community', component: Home},
   { path: 'programmes', component: Home},
   { path: 'resources', component: Home},
+  { path: 'media', component: Home},
+   { path: 'about', component: Home},
+  { path: 'events', component: Home},
 ];

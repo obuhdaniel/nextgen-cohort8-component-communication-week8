@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
 import { EventCard } from '../reusable/event-card/event-card';
 import { EventRegistrationModal } from '../reusable/event-registration-modal/event-registration-modal';
 import { ResourceCard } from '../reusable/resource-card/resource-card';
+import { VideoPlayer } from '../reusable/video-player/video-player';
 
 @Component({
   selector: 'app-home',
-  imports: [Logo, Button, PillarCard, EventCard, EventRegistrationModal, ResourceCard],
+  imports: [Logo, Button, PillarCard, EventCard, EventRegistrationModal, ResourceCard, VideoPlayer],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

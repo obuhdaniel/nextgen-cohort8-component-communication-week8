@@ -24,8 +24,8 @@
               buttonType="primary"
               buttonText="Explore Yra"
               arrowRight="true"
-            ></app-button>
-            <app-button buttonType="secondary" buttonText="Upcoming Training"></app-button>
+              (Navclick)="handleNavigation('/about')"></app-button>
+            <app-button buttonType="secondary" buttonText="Upcoming Training" (Navclick)="handleNavigation('/events')"></app-button>
           </div>
           <div class="section-1-container-footer-items-wrapper flex flex-row mt-9">
             @for (
@@ -157,7 +157,16 @@
             </p>
           </div>
 
-          <!-- missing a button -->
+          <!-- missing a button ✅ -->
+          <app-button
+            buttonType="secondary"
+            buttonText="View Media library"
+            (Navclick)="handleNavigation('/media')"
+          />
+        </div>
+
+        <div>
+          <app-video-player/>
         </div>
       </div>
     </div>

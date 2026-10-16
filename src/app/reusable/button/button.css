@@ -1,12 +1,3 @@
-/* Design tokens (put these in styles.css or :root) */
-:root {
-  --color-brand-teal: #1f86a5;
-  --color-brand-teal-dark: #176d86;
-  --color-brand-orange: #ff861b;
-  --color-brand-orange-dark: #e66e00;
-  --color-white: #fff;
-  --radius-button: 10px;
-}
 
 /* Base: shared by every button variant */
 .btn {

@@ -17,6 +17,9 @@ export class MainNav {
   isHeaderStuck = false;
   tappedLink = new Map<string, 'idle' | 'tap'>();
 
+  protected readonly logoSrc = '/myLogo.jpg';
+  protected readonly brandName = 'Young Researcher';
+
   buttonClicked(buttonText: string) {
     console.log(buttonText, ' i am cliked from main nav componet');
   }

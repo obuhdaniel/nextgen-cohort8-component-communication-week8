@@ -59,6 +59,7 @@
   --footer: #123f4d;
   --shadow: 0 10px 30px rgba(19, 49, 61, 0.08);
   --radius: 16px;
+  --radius-button: 8px
 }
 
 * {

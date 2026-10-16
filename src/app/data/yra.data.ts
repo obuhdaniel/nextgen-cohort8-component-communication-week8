@@ -64,3 +64,17 @@ export const EVENTS: YraEvent[] = [
     fee: 7500,
   },
 ];
+
+export interface ResourceItem {
+  letter: string;
+  title: string;
+  text: string;
+  route: string;
+  tone: 'teal' | 'orange';
+  linkLabel: string;
+}
+
+export const YRA_RESOURCES: ResourceItem[]= [
+  {letter:'F', title: 'Free Reources', text: 'Explore guides, templates and learning materials.', route: '/resources', tone: 'teal', linkLabel:'Browse free'},
+    {letter:'P', title: 'Premium Reources', text: 'Access premium guides, templates and research toolkits.', route: '/resources', tone: 'orange', linkLabel:'Browse premium'},
+]

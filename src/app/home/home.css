@@ -252,4 +252,15 @@ span {
     flex-direction: row;
     gap: 20px;
   }
+
+  .section-4-wrapper-container-1,
+  .section-4-wrapper-container-2 {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .section-4-wrapper-container-2 app-resource-card {
+    flex: 1 1 0;
+    min-width: 0;
+  }
 }

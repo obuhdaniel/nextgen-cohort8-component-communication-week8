@@ -17,13 +17,16 @@
           research excellence, mentorship, knowledge-sharing and meaningful impact.
         </p>
         <div class="section-1-container-footer flex flex-col">
-         <!-- mssing two buttons ✅  -->
+          <!-- mssing two buttons ✅  -->
 
-         <div class="flex py-4 gap-1 ">
-          <app-button buttonType="primary" buttonText="Explore Yra" arrowRight="true"></app-button>
-           <app-button buttonType="secondary" buttonText="Upcoming Training" ></app-button>
-
-         </div>
+          <div class="flex py-4 gap-1">
+            <app-button
+              buttonType="primary"
+              buttonText="Explore Yra"
+              arrowRight="true"
+            ></app-button>
+            <app-button buttonType="secondary" buttonText="Upcoming Training"></app-button>
+          </div>
           <div class="section-1-container-footer-items-wrapper flex flex-row mt-9">
             @for (
               item of [
@@ -39,9 +42,9 @@
         </div>
       </div>
       <div class="section-1-logo-wrapper relative flex flex-col h-full">
-    <!-- missing app logo ✅ -->
+        <!-- missing app logo ✅ -->
 
-    <app-logo logoUrl='/myLogo.jpg'></app-logo>
+        <app-logo logoUrl="/myLogo.jpg"></app-logo>
 
         <div class="section-1-logo-wrapper-overflow absolute">
           <b>Join our research community</b>
@@ -69,12 +72,12 @@
         </div>
       </div>
       <div class="section-2-conatiner-2 flex">
-<!-- missing array of data in a whiteCard Componet -->
- <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-  @for (p of pillars(); track p.title) {
-    <app-pillar-card [pillar]="p" (linkClick)="handleNavigation($event)" />
-  }
-</div>
+        <!-- missing array of data in a whiteCard Componet -->
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          @for (p of pillars(); track p.title) {
+            <app-pillar-card [pillar]="p" (linkClick)="handleNavigation($event)" />
+          }
+        </div>
       </div>
     </div>
   </div>
@@ -96,7 +99,7 @@
         </div>
       </div>
       <div class="section-3-conatiner-2 flex">
-<!-- missing array of data in a whiteCard Componet✅  -->
+        <!-- missing array of data in a whiteCard Componet✅  -->
 
         <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           @for (e of events(); track e.id) {
@@ -111,7 +114,7 @@
     </div>
   </div>
   <div class="section-4 w-full pt-20 pb-20">
-    <div class="section-4-wrapper flex">
+    <div class="section-4-wrapper flex px-10">
       <div class="section-4-wrapper-container-1 flex">
         <div class="section-4-wrapper-container-1-holder-1 flex">
           <p
@@ -130,7 +133,11 @@
         </p>
       </div>
       <div class="section-4-wrapper-container-2 flex">
-<!-- missing array of data in a whiteCard Componet -->
+        <!-- missing array of data in a whiteCard Componet -->
+
+        @for (e of resources(); track e.letter) {
+          <app-resource-card [resource]="e" (linkClick)="handleNavigation(e.route)" />
+        }
       </div>
     </div>
   </div>
@@ -153,7 +160,6 @@
           <!-- missing a button -->
         </div>
       </div>
-      
     </div>
   </div>
 </section>

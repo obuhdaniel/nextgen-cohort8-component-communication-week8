@@ -2,14 +2,15 @@ import { Component, inject, input, output, viewChild } from '@angular/core';
 import { Logo } from '../reusable/logo/logo';
 import { Button } from '../reusable/button/button';
 import { PillarCard } from '../reusable/pillar-card/pillar-card';
-import { Pillar, YraEvent } from '../data/yra.data';
+import { Pillar, ResourceItem, YraEvent } from '../data/yra.data';
 import { Router } from '@angular/router';
 import { EventCard } from '../reusable/event-card/event-card';
 import { EventRegistrationModal } from '../reusable/event-registration-modal/event-registration-modal';
+import { ResourceCard } from '../reusable/resource-card/resource-card';
 
 @Component({
   selector: 'app-home',
-  imports: [Logo, Button, PillarCard, EventCard, EventRegistrationModal],
+  imports: [Logo, Button, PillarCard, EventCard, EventRegistrationModal, ResourceCard],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -24,6 +25,9 @@ export class Home {
   events = input.required<YraEvent[]>();
   eventSelected = output<string>();
   registrationModal = viewChild.required(EventRegistrationModal);
+
+  resources = input.required<ResourceItem[]>();
+  resourceSelected = output<string>();
 
 
   handleNavigation(route: string) {

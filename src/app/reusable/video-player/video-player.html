@@ -1,0 +1,46 @@
+
+<div class="w-full">
+  <button
+    type="button"
+    (click)="play()"
+    aria-label="Play video preview"
+    class="group relative grid aspect-video w-full
+           place-items-center overflow-hidden rounded-xl-soft
+           bg-[#111111] focus:outline-none
+           focus-visible:ring-4 focus-visible:ring-orange-400/50"
+  >
+   
+    <span
+      class="grid h-18 w-18 place-items-center
+             rounded-full bg-brand-orange pl-1 text-[30px]
+             text-white transition-transform duration-200
+             group-hover:scale-110"
+      aria-hidden="true"
+    >
+      ▶
+    </span>
+  </button>
+
+  @if (showMessage()) {
+    <div
+      role="status"
+      class="fixed bottom-6 right-6 z-120 flex max-w-sm
+             items-start gap-3 rounded-xl bg-brand-footer
+             px-4 py-3 text-sm text-white shadow-xl"
+    >
+      <p class="flex-1 leading-5">
+        YouTube player placeholder — the official YRA video
+        will be embedded here.
+      </p>
+
+      <button
+        type="button"
+        (click)="dismissMessage()"
+        aria-label="Dismiss message"
+        class="text-lg leading-5 text-white/70 hover:text-white"
+      >
+        &times;
+      </button>
+    </div>
+  }
+</div>

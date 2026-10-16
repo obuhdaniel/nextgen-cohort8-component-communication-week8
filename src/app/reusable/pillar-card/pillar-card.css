@@ -1,0 +1,88 @@
+:host {
+  display: block;
+}
+
+.pillar-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 225px;
+  height: 100%;
+  padding: 22px;
+  background: var(--color-brand-white, #fff);
+  border: 1px solid var(--color-brand-line, #dfe7eb);
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(19, 49, 61, 0.04);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.pillar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(19, 49, 61, 0.09);
+}
+
+/* decorative corner circle */
+.pillar-card::after {
+  content: '';
+  position: absolute;
+  right: -45px;
+  bottom: -45px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-brand-teal) 10%, white);
+  pointer-events: none;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  font-weight: 900;
+}
+
+.icon-teal {
+  background: color-mix(in srgb, var(--color-brand-teal) 12%, white);
+  color: var(--color-brand-teal);
+}
+
+.icon-orange {
+  background: color-mix(in srgb, var(--color-brand-orange) 14%, white);
+  color: var(--color-brand-orange);
+}
+
+h3 {
+  margin: 0 0 7px;
+}
+
+p {
+  margin: 7px 0 0;
+  color: var(--color-brand-muted, #66737d);
+}
+
+.pillar-link {
+  position: relative; /* stays above the ::after circle */
+  z-index: 1;
+  margin-top: 15px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--color-brand-teal);
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.pillar-link:hover {
+  text-decoration: underline;
+}
+
+.pillar-link:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-brand-teal) 35%, transparent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

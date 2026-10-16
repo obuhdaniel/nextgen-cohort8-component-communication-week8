@@ -8,4 +8,8 @@
   (click)="onNavClick()"
 >
   {{ buttonText() }}
+
+  @if (arrowRight){
+    <span class="arrow">&rarr;</span>
+  }
 </button>
